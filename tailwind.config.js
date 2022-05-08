@@ -38,6 +38,7 @@ module.exports = {
       colors: {
         primary: '#03438d',
         secondary: '#E2EDFA',
+        success: '#83C51D',
         positive: '#EEC32A',
         negative: '#F57375',
         dark: '#000400',
