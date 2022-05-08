@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;700&family=Baloo+Da+2&family=Lato&family=Noto+Sans+TC:wght@400;700&family=Paytone+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: local('Helvetica Neue'), url(../../assets/font/Helvetica-Neue-Bold_22498.ttf) format('ttf');
+}
+
+@tailwind utilities;
+
+@layer base {
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+    body {
+        background: url(../images/bg.svg) repeat;
+    }
+    h1 {
+        @apply text-6xl;
+    }
+}
+
