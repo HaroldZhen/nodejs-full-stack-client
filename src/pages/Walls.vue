@@ -3,11 +3,11 @@
   import moment from "moment"
   import {ref, onBeforeMount, watch} from 'vue'
   import {size} from 'loadsh'
-  import {useRouter} from 'vue-router'
   import Loading from '../components/Loading.vue'
+  import Navbar from '../components/Navbar.vue'
+  import SideBar from '../components/SideBar.vue'
 
   const postAPI = 'https://secret-basin-09481.herokuapp.com/posts/'
-  const $router = useRouter()
 
 
   const posts = ref([])
@@ -59,19 +59,7 @@
 </script>
 
 <template>
-    <nav class="bg-white border-b-3 border-dark mb-12">
-        <div class="container mx-auto px-0 sm: px-5">
-            <div class="flex items-center py-3">
-                <h1 class="text-2.5xl font-paytone-one">MetaWall</h1>
-                <div class="block ml-auto font-azeret-mono">
-                    <div class="flex items-center">
-                        <img src="../assets/images/user_default.png" class="mr-2.5" width="30" height="30">
-                        <a href="#" class="border-b-2 border-dark font-bold">Member</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <navbar></navbar>
     <div class="container mx-auto my-5 md:my-0">
         <div class="flex flex-row space-x-7">
             <div class="basis-3/5">
@@ -160,99 +148,10 @@
                         </div>
                     </section>
                 </template>
-                <!--            邊緣小杰-->
-                <!--                <section class="bg-white border-2 border-dark p-6 rounded-lg shadow-x2 mb-4">-->
-                <!--                    <div class="flex mb-4">-->
-                <!--                        <div class="mr-4">-->
-                <!--                            <img src="../assets/images/user.png" width="45" height="45">-->
-                <!--                        </div>-->
-                <!--                        <div class="flex flex-col justify-around mb-4">-->
-                <!--                            <p class="font-noto-sans-tc font-bold leading-normal m-0 p-0">邊緣小杰</p>-->
-                <!--                            <p class="font-baloo-da-2 text-xs text-accent">2022/1/10 12:00</p>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                    <div class="mb-4">外面看起來就超冷....<br/>我決定回被窩繼續睡....>.&lt;</div>-->
-                <!--                    <div>-->
-                <!--                        <img src="../assets/images/image@2x.png">-->
-                <!--                    </div>-->
-                <!--                </section>-->
-                <!--            波吉-->
-                <!--                <section class="bg-white border-2 border-dark p-6 rounded-lg shadow-x2 mb-4">-->
-                <!--                    <div class="flex mb-4">-->
-                <!--                        <div class="mr-4">-->
-                <!--                            <img src="../assets/images/user6.png" width="45" height="45">-->
-                <!--                        </div>-->
-                <!--                        <div class="flex flex-col justify-around mb-4">-->
-                <!--                            <p class="font-noto-sans-tc font-bold leading-normal m-0 p-0">波吉</p>-->
-                <!--                            <p class="font-baloo-da-2 text-xs text-accent">2022/1/10 12:00</p>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                    <div class="mb-4">-->
-                <!--                        我一定要成為很棒棒的國王！-->
-                <!--                    </div>-->
-                <!--                </section>-->
-                <!--            阿爾敏-->
-                <!--                <section class="bg-white border-2 border-dark p-6 rounded-lg shadow-x2 mb-4">-->
-                <!--                    <div class="flex mb-4">-->
-                <!--                        <div class="mr-4">-->
-                <!--                            <img src="../assets/images/user_default.png" width="45" height="45">-->
-                <!--                        </div>-->
-                <!--                        <div class="flex flex-col justify-around mb-4">-->
-                <!--                            <p class="font-noto-sans-tc font-bold leading-normal m-0 p-0">阿爾敏</p>-->
-                <!--                            <p class="font-baloo-da-2 text-xs text-accent">2022/1/10 12:00</p>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                    <div class="mb-4">-->
-                <!--                        我一定要成為很棒棒的國王！-->
-                <!--                    </div>-->
-                <!--                </section>-->
             </div>
             <div class="basis-2/5 ">
                 <!--            張貼動態-->
-                <div class="bg-white border-2 border-dark">
-                    <div class="py-8 px-6">
-                        <button class="
-                    bg-primary
-                    text-white
-                    border
-                    border-2
-                    border-dark
-                    py-4
-                    rounded-lg
-                    shadow-x1
-                    mb-4
-                    w-full
-                    disabled:border-2
-                    disabled:border-grey-4
-                    disabled:bg-grey-2
-                    disabled:shadow-none
-                    "
-                                @click="$router.push({ name: 'post'})"
-                        >
-                            張貼動態
-                        </button>
-                        <ul class="space-y-6">
-                            <li class="flex items-center ">
-                                <div class="mr-3">
-                                    <img src="../assets/images/user_default.png" width="50px" height="50px">
-                                </div>
-                                <div class="font-noto-sans-tc font-bold leading-normal">Harold</div>
-                            </li>
-                            <li class="flex items-center">
-                                <div class="mr-3">
-                                    <img src="../assets/images/user_default.png" width="50px" height="50px">
-                                </div>
-                                <div class="font-noto-sans-tc font-bold leading-normal">追蹤名單</div>
-                            </li>
-                            <li class="flex items-center">
-                                <div class="mr-3">
-                                    <img src="../assets/images/user_default.png" width="50px" height="50px">
-                                </div>
-                                <div class="font-noto-sans-tc font-bold leading-normal">我按讚的文章</div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                <side-bar></side-bar>
             </div>
         </div>
     </div>
