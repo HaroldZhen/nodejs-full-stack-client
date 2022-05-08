@@ -1,7 +1,7 @@
 # Week4
 
 ## Client:
-- [walls](https://haroldzhen.github.io/nodejs-full-stack-client/#/)
+- [index](https://haroldzhen.github.io/nodejs-full-stack-client/#/)
 - [post](https://haroldzhen.github.io/nodejs-full-stack-client/#/post)
 
 ## Backend:
